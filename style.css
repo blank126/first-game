@@ -13,7 +13,29 @@ body {
     overflow: hidden; /* 스크롤바 숨김 */
 }
 
+/* 게임 맵(도화지) 스타일 */
 canvas {
-    background-color: #333; /* 게임 맵의 바닥 색상 */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); /* 캔버스 테두리 그림자 효과 */
+    background-color: #333; /* 바닥 색상 */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); /* 테두리 그림자 효과 */
+}
+
+/* UI 컨테이너 스타일 (타이머, 점수) */
+#ui-container {
+    position: absolute; /* 캔버스 위에 띄우기 */
+    top: 20px;          /* 위에서부터 20px 띄우기 */
+    left: 50%;          /* 화면 가로 중앙에 배치 */
+    transform: translateX(-50%); /* 정확한 중앙 정렬 */
+    
+    width: 760px;       /* 캔버스 너비(800)보다 살짝 작게 설정 */
+    display: flex;
+    justify-content: space-between; /* 양쪽 끝으로 밀어내기 */
+    
+    color: white;       /* 글씨 색상 */
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* 글씨 그림자 */
+    
+    pointer-events: none; /* UI가 마우스 클릭을 방해하지 않도록 설정 */
+    z-index: 10;        /* 캔버스보다 위에 보이도록 우선순위 높임 */
 }
